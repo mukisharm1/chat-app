@@ -1,0 +1,37 @@
+<%- include ("./header") %>
+<div class="row text-center" style="display:flex; flex-wrap: wrap;">
+  <% chat.forEach(function(chat){ %>
+      <div class="col-md-3 col-sm-6">
+          <div class="thumbnail">
+             <img src="<%= chat.image %>">
+             <p><%=chat.created.toDateString() %></p>
+             <div class="caption">
+                 <h4><%= chat.tittle %></h4>
+             </div>
+             <div class="descrition">
+                <% if(chat.body && chat.body.length > 0) { %>
+                  <p><%= chat.body.substring(0, 100)%></p>
+                   <% } %>
+              </div>
+              <a class="ui floated basic violet button"href="/index/<%= chat._id%>">Read more</a>
+          </div>
+      </div>
+  <% }); %>
+</div>
+</div>
+ 
+
+  
+  
+    
+ 
+
+
+
+
+
+
+
+
+
+<%- include ("./footer") %>
