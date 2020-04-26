@@ -1,0 +1,36 @@
+<%- include ("./header") %>
+<div class="containermain">
+<form action="/index" method="POST" enctype="multipart/form-data">
+  
+    <div class="form-group">
+      <label for="image">Image:</label> 
+      <input type="file" id="image" name="image" accept="image/*" required>
+    </div>
+    <div class="form-group">
+      <label for="Tittle">Title:</label>
+      <input type="text" class="form-control" placeholder="Tittle" name="chat[tittle]">
+    </div>
+    <div class="form-group">
+      <label for="Body">Description</label>
+      <textarea class="form-control" rows="5"name="chat[body]" ></textarea>
+    </div>
+    
+   
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<%- include ("./footer") %>

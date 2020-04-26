@@ -1,0 +1,31 @@
+<%- include ("./header") %>
+<div class="containers">
+<div class="cards"  >
+      <img class="card-img-top" src="<%=chat.image%>" alt="Card image">
+    <span><%= chat.created.toDateString() %></span>
+    <div class="card-body">
+      <h4 class="card-title"><%=chat.tittle%></h4>
+      <p class="card-text"><%=chat.body%></p>
+         
+    </div>
+    <a class="btn btn-success" role="button" href="/index/<%=chat._id%>/edit">Edit</a>
+    <form action="/index/<%=chat._id%>?_method=DELETE" method="POST">
+    <button class="btn btn-danger" id="Delete">Delete</button>
+    </form>
+    <a class="btn btn-success" href="/index/<%=chat._id%>/comments/new">comment
+    </a>
+    <% chat.comments.forEach(function(comment){ %>
+         <p> <%=comment.author%>-<% comment.text%> </p>
+    <%})%>
+    
+    <hr>
+  </div> 
+</div>
+      
+
+
+
+
+
+
+<%- include ("./footer") %>
