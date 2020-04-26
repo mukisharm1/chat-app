@@ -3,7 +3,7 @@ var express = require("express");
  
 var mongoose =require("mongoose");
 var mongodb = require("mongodb");
-var bodyParser = require("body-Parser");
+var bodyParser = require("body-parser");
 var methodOverride= require("method-override");
 var multer = require('multer');
 
@@ -218,8 +218,8 @@ app.post("/index/:id/comments",function(req,res){
                    if(err){
 					   console.log(err);
 				   }else{
-					 Chat.comments.push(comment);
-					   Chat.save();
+					 _chat.comments.push(comment);
+					   _chat.save();
 					   res.redirect("/index"+chat._id);
 					   
 
